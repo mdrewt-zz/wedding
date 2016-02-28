@@ -3,79 +3,61 @@ Place all the styles related to the Pages controller here.
 They will automatically be included in application.css.
 */
 
-/** {
+body {
   margin: 0;
   padding: 0;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.image {
-  height: 50vw;
   width: 100%;
-  background: black;
-  z-index: 1;
+  background-color: #DDD;
 }
 
-.content {
+#cover-image .img-container {
+  width: 1000px;
+  height: 500px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+#cover-image img {
+  float: none;
+  position: static;
   width: 100%;
-  background: white;
-  z-index: 2;
+  margin-top: -125px;
+  margin-left: -50px;
 }
 
-.content h1 {
-  font-size: 40px;
-  color: black;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-  margin: 30px, 60px;
+#image-2 {
+  overflow: hidden;
 }
 
-.content p {
-  font-size: 20px;
-  color: black;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  margin: 30px, 60px
+#image-2 .img-container {
+  transform: rotate(95deg);
+  width: 600px;
+  height: 400px;
+  overflow: hidden;
+  margin-top: 95px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: -200px;
 }
 
-#wall_1 {
-  background-image: url('hotel_1.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: top;
-  background-attachment: fixed;
-}
-
-#wall_2 {
-  background-image: url('hotel_2.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: top;
-  background-attachment: fixed;
-}
-
-#wall_3 {
-  background-image: url('hotel_3.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: top;
-  background-attachment: fixed;
-}
-
-p::before {
-  content: "  "
-}
-
-p {
-  margin-bottom: 1em;
-}*/
-
-/*#nav {
-  height: 70px;
+#image-2 img {
   width: 100%;
-  position: fixed;
-  background: blue;
-}*/
+}
+
+#image-3 {
+  overflow: hidden;
+}
+
+#image-3 .img-container {
+  transform: rotate(-4deg);
+  width: 400px;
+  height: 600px;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#image-3 img {
+  width: 100%;
+}

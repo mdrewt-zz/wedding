@@ -7,7 +7,24 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #DDD;
+}
+
+.notice-container {
+  position: relative;
+  z-index: 100;
+  margin-top: 75px;
+  margin-bottom: -75px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alert {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.navbar-header h1 {
+  color: #777
 }
 
 #cover-image .img-container {
@@ -26,38 +43,43 @@ body {
 }
 
 #image-2 {
+  height: 500px;
   overflow: hidden;
 }
 
 #image-2 .img-container {
   transform: rotate(95deg);
-  width: 600px;
+  width: 450px;
   height: 400px;
   overflow: hidden;
-  margin-top: 95px;
+  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: -200px;
 }
 
 #image-2 img {
-  width: 100%;
+  width: 600px;
+  margin-top: -75px;
+  margin-left: -50px;
 }
 
 #image-3 {
+  height: 500px;
   overflow: hidden;
 }
 
 #image-3 .img-container {
   transform: rotate(-4deg);
   width: 400px;
-  height: 600px;
+  height: 450px;
   overflow: hidden;
-  margin-top: 10px;
+  margin-top: 25px;
   margin-left: auto;
   margin-right: auto;
 }
 
 #image-3 img {
+  margin-top: 0px;
+  margin-left: -50px;
   width: 100%;
 }

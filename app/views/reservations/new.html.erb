@@ -1,0 +1,38 @@
+<div class="container marketing" style="margin-top: 100px;">
+  <div class="row featurette">
+    <div class="col-md-7">
+      <!-- <h2 class="featurette-heading">Things to do in St. Thomas <span class="text-muted">It'll blow your mind.</span></h2>
+      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p> -->
+      <%= form_for @reservation do |f|%>
+        <fieldset class="form-group">
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name %>
+        </fieldset>
+        <fieldset class="form-group">
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name %>
+        </fieldset>
+        <fieldset class="form-group">
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+        </fieldset>
+        <fieldset class="form-group">
+          <%= f.label :attending %>
+          <%= f.radio_button :attending, true %> I will be attending the wedding
+          <br />
+          <%= f.radio_button :attending, false %> I will be unable to attend the wedding
+        </fieldset>
+        <fieldset>
+          <%= f.hidden_field :edit_key %>
+        </fieldset>
+        <fieldset class="form-group">
+          <%= f.submit "Submit RSVP", class: "btn btn-primary" %>
+          <%= link_to "Cancel", root_path, class: "btn btn-default" %>
+        </fieldset>
+      <% end %>
+    </div>
+    <div class="col-md-5">
+      <%= image_tag "hotel_1.jpg", class: "featurette-image img-responsive center-block" %>
+    </div>
+  </div>
+</div>

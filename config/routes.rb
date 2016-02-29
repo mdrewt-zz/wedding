@@ -4,6 +4,11 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'pages#show'
+  get '/about' => 'pages#about', as: :about
+  get '/itinerary' => 'pages#itinerary', as: :itinerary
+  get '/activities' => 'pages#activities', as: :activities
+
+  resources :reservations, only: [:new, :create, :edit, :update]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

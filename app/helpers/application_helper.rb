@@ -1,5 +1,17 @@
 module ApplicationHelper
-  def active_nav
-    
+  def active_nav(controller, action)
+    {
+      'pages' => {
+        'show' => 'home',
+        'about' => 'about',
+        'contact' => 'contact',
+        'itinerary' => 'itinerary',
+        'activities' => 'activities'
+      },
+      'reservations' => {
+        'new' => 'rsvp',
+        'edit' => 'rsvp'
+      }
+    }[controller][action]
   end
 end

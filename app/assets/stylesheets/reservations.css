@@ -2,3 +2,13 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+form {
+  padding: 25px;
+  padding-top: 0px;
+}
+.form-group label {
+  display: block;
+}
+.form-group label::after {
+  content: ':';
+}

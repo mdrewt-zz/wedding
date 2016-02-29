@@ -7,4 +7,10 @@ class PagesController < ApplicationController
 
   def contact
   end
+
+  def itinerary
+  end
+
+  def activities
+  end
 end

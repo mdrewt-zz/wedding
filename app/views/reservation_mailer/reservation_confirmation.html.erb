@@ -1,0 +1,7 @@
+<h1>Thank you for your RSVP <%= @reservation.full_name %>.</h1>
+<p>
+  You have registered as <%= @reservation.attending ? "attending" : "not attending" %> Liz and Eric's wedding.
+  If, for some reason, you need to change your RSVP at a later date, you can edit it by clicking on this link: <%= link_to('Edit RSVP', edit_reservation_path(@reservation) + '?edit_key=' + @reservation.edit_key) %>
+</p>
+<p>Sincerely,</p>
+<p>Liz and Eric</p>

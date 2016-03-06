@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Wedding</title>
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -37,8 +38,8 @@
             <ul class="nav navbar-nav">
               <% active = active_nav(controller_name, action_name) %>
               <%= "<li class=#{active == 'home' ? 'active' : ''}>".html_safe %><%= link_to 'Home', root_path %></li>
-              <%= "<li class=#{active == 'about' ? 'active' : ''}>".html_safe %><a href="/about">About</a></li>
               <%= "<li class=#{active == 'itinerary' ? 'active' : ''}>".html_safe %><a href="/itinerary">Itinerary</a></li>
+              <%= "<li class=#{active == 'accomodations' ? 'active' : ''}>".html_safe %><%= link_to 'Accomodations', '/accomodations' %></li>
               <%= "<li class=#{active == 'activities' ? 'active' : ''}>".html_safe %><a href="/activities">Activities</a></li>
               <%= "<li class=#{active == 'rsvp' ? 'active' : ''}>".html_safe %><a href="/reservations/new">RSVP</a></li>
               <!-- <li><a href="#upload">Upload Photos</a></li> -->

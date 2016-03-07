@@ -2,9 +2,6 @@ class PagesController < ApplicationController
   def show
   end
 
-  def about
-  end
-
   def contact
   end
 
@@ -12,5 +9,8 @@ class PagesController < ApplicationController
   end
 
   def activities
+  end
+  
+  def registry
   end
 end

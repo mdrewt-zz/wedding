@@ -8,6 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if flash[:notice] || flash[:warning] %>
   <div class="notice-container container">
     <% if flash[:notice] %>
       <div class="alert alert-success" role="alert">
@@ -26,6 +27,7 @@
       <% end %>
     <% end %>
   </div>
+  <% end %>
   <div class="navbar-wrapper">
     <div class="container">
 
@@ -37,11 +39,12 @@
           <div id="navbar" class="pull-right">
             <ul class="nav navbar-nav">
               <% active = active_nav(controller_name, action_name) %>
-              <%= "<li class=#{active == 'home' ? 'active' : ''}>".html_safe %><%= link_to 'Home', root_path %></li>
-              <%= "<li class=#{active == 'itinerary' ? 'active' : ''}>".html_safe %><a href="/itinerary">Itinerary</a></li>
-              <%= "<li class=#{active == 'accomodations' ? 'active' : ''}>".html_safe %><%= link_to 'Accomodations', '/accomodations' %></li>
-              <%= "<li class=#{active == 'activities' ? 'active' : ''}>".html_safe %><a href="/activities">Activities</a></li>
-              <%= "<li class=#{active == 'rsvp' ? 'active' : ''}>".html_safe %><a href="/reservations/new">RSVP</a></li>
+              <%= "<li class=#{active == 'home' ? 'ctive' : ''}>".html_safe %><%= link_to 'Home', root_path %></li>
+              <%= "<li class=#{active == 'itinerary' ? 'ctive' : ''}>".html_safe %><%= link_to 'Itinerary', '/itinerary' %></li>
+              <%= "<li class=#{active == 'activities' ? 'ctive' : ''}>".html_safe %><%= link_to 'Activities', '/activities'%></li>
+              <%= "<li class=#{active == 'registry' ? 'ctive' : ''}>".html_safe %><%= link_to 'Registry', '/registry'%></li>
+              <%= "<li class=#{active == 'contact' ? 'ctive' : ''}>".html_safe %><%= link_to 'Contact Us', '/contact' %></li>
+              <%= "<li class=#{active == 'rsvp' ? 'ctive' : ''}>".html_safe %><%= link_to 'RSVP', '/reservations/new' %></li>
               <!-- <li><a href="#upload">Upload Photos</a></li> -->
             </ul>
           </div>

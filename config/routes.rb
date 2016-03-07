@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/about' => 'pages#about', as: :about
   get '/itinerary' => 'pages#itinerary', as: :itinerary
   get '/activities' => 'pages#activities', as: :activities
+  get '/contact' => 'pages#contact', as: :contact
+  get '/registry' => 'pages#registry', as: :registry
 
   resources :reservations, only: [:new, :create, :edit, :update]
 

@@ -1,9 +1,9 @@
 <div class="container marketing" style="margin-top: 100px;">
   <div class="row featurette">
-    <div class="col-md-7">
+    <div class="rsvp-form col-md-7 col-md-push-5 center-block">
       <!-- <h2 class="featurette-heading">Things to do in St. Thomas <span class="text-muted">It'll blow your mind.</span></h2>
       <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p> -->
-      <%= form_for @reservation do |f|%>
+      <%= form_for @reservation, class: 'center-block' do |f|%>
         <fieldset class="form-group">
           <%= f.label :first_name %>
           <%= f.text_field :first_name %>
@@ -18,21 +18,74 @@
         </fieldset>
         <fieldset class="form-group">
           <%= f.label :attending %>
-          <%= f.radio_button :attending, true %> I will be attending the wedding
+          <%= f.radio_button :attending, true, checked: true %> I will be attending the wedding
           <br />
           <%= f.radio_button :attending, false %> I will be unable to attend the wedding
         </fieldset>
         <fieldset>
-          <%= f.hidden_field :edit_key %>
+          <%= hidden_field_tag :edit_key, f.object.edit_key %>
+        </fieldset>
+        <fieldset class="form-group">
+          <div id="guest-container" style="display: <%= @reservation.guests.blank? ? 'none;' : '' %>">
+            <%= f.label :guests %>
+            
+            <table id="guest-list">
+              <%= f.fields_for :guests, @reservation.guests do |g| %>
+                <tr>
+                  <td><%= g.object.full_name %></td>
+                  <td><%= g.hidden_field :attributes, value: {_destroy: false}.to_json %></td>
+                  <td><span class="glyphicon glyphicon-remove remove-guest"></span></td>
+                </tr>
+              <% end %>
+            </table>
+            
+          </div>
         </fieldset>
         <fieldset class="form-group">
           <%= f.submit "Submit RSVP", class: "btn btn-primary" %>
+          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#guestModal">Add Guest</button>
           <%= link_to "Cancel", root_path, class: "btn btn-default" %>
         </fieldset>
       <% end %>
     </div>
-    <div class="col-md-5">
-      <%= image_tag "hotel_1.jpg", class: "featurette-image img-responsive center-block" %>
+    <div class="col-md-5 col-md-pull-7">
+      <%= image_tag "http://www.tonycooke.org/wp-content/uploads/2014/10/rsvp5.jpg", class: "featurette-image img-responsive center-block" %>
     </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="guestModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add a Guest</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <fieldset class="form-group">
+            <%= label_tag :first_name %>
+            <%= text_field_tag :first_name %>
+          </fieldset>
+          <fieldset class="form-group">
+            <%= label_tag :last_name %>
+            <%= text_field_tag :last_name %>
+          </fieldset>
+          <fieldset class="form-group">
+            <%= label_tag :email %>
+            <%= text_field_tag :email %>
+            (Optional)
+          </fieldset>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <%= button_tag 'Add Guest', id: 'add-guest', class: 'btn btn-default' %>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
   </div>
 </div>

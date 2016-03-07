@@ -12,3 +12,27 @@ form {
 .form-group label::after {
   content: ':';
 }
+.center-block {
+  margin: 0 auto;
+  text-align: center;
+}
+table {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+}
+tbody {
+  display: inline-block;
+  margin: 0 auto;
+}
+td {
+  text-align: left;
+}
+.remove-guest {
+  display: inline-block;
+  margin-left: 10px;
+  color: #C00;
+}
+.remove-guest:hover {
+  cursor: pointer;
+}

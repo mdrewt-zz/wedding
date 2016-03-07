@@ -9,15 +9,41 @@ body {
   width: 100%;
 }
 
+.lead {
+  font-size: 18px;
+}
+
 h1, h2, h3, h4, h5 {
   font-family: 'Playfair Display', serif;
+}
+
+.rsvp-form {
+  margin: 0 auto;
+}
+
+.container .navbar-inverse {
+  color: white;
+  background-color: #40A0D0;
+  border: none;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: white;
+}
+
+.navbar-inverse .navbar-nav>li:hover {
+  background-color: #2070A0;
+}
+
+.navbar-inverse .navbar-nav>li.ctive {
+  background-color: #2070A0;
 }
 
 .notice-container {
   position: relative;
   z-index: 100;
   margin-top: 75px;
-  margin-bottom: -75px;
+  margin-bottom: -135px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -28,62 +54,59 @@ h1, h2, h3, h4, h5 {
 }
 
 .navbar-header h1 {
-  color: #777
+  color: white;
+  line-height: 38px;
+  font-size: 25px;
 }
 
 #cover-image .img-container {
-  width: 1000px;
-  height: 500px;
-  overflow: hidden;
+  width: 500px;
   margin: 0 auto;
+  border: 5px solid white;
+  margin-top: 100px;
 }
 
 #cover-image img {
   float: none;
   position: static;
   width: 100%;
-  margin-top: -125px;
-  margin-left: -50px;
 }
 
 #image-2 {
   height: 500px;
-  overflow: hidden;
 }
 
 #image-2 .img-container {
-  transform: rotate(95deg);
-  width: 450px;
+  border: 5px solid white;
+  width: 325px;
   height: 400px;
-  overflow: hidden;
-  margin-top: 50px;
+  margin-top: 90px;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
 }
 
 #image-2 img {
-  width: 600px;
+  width: 350px;
   margin-top: -75px;
-  margin-left: -50px;
 }
 
 #image-3 {
   height: 500px;
-  overflow: hidden;
 }
 
 #image-3 .img-container {
-  transform: rotate(-4deg);
-  width: 400px;
-  height: 450px;
-  overflow: hidden;
-  margin-top: 25px;
+  border: 5px solid white;
+  width: 320px;
+  height: 400px;
+  margin-top: 80px;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
 }
 
 #image-3 img {
-  margin-top: 0px;
-  margin-left: -50px;
-  width: 100%;
+  margin-top: -20px;
+  margin-left: -30px;
+  width: 350px;
 }

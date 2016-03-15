@@ -2,6 +2,10 @@ class ReservationsController < ApplicationController
   before_action :authorize_edit, only: [:edit, :update]
   before_action :map_guest_attributes, only: [:create, :update]
   before_action :generate_edit_key, only: [:create]
+  before_filter :authorize, only: [:index]
+
+  def index
+  end
 
   def new
     @reservation = Reservation.new
@@ -45,7 +49,7 @@ class ReservationsController < ApplicationController
   end
 
   private
-  
+
   def map_guest_attributes
     if params[:reservation] && params[:reservation][:guests_attributes]
       params[:reservation][:guests_attributes].each_key { |key|
@@ -56,7 +60,7 @@ class ReservationsController < ApplicationController
       }
     end
   end
-  
+
   def generate_edit_key
     params[:reservation][:edit_key] = rand(0..100000000).to_s.hash
   end

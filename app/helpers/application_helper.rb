@@ -11,6 +11,9 @@ module ApplicationHelper
       'reservations' => {
         'new' => 'rsvp',
         'edit' => 'rsvp'
+      },
+      'sessions' => {
+        'new' => 'login'
       }
     }[controller][action]
   end

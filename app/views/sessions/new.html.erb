@@ -1,0 +1,16 @@
+<div class="container">
+  <hr class="featurette-divider">
+
+  <%= form_tag '/sessions' do %>
+    <h3>Login</h3>
+    <fieldset class="form-group">
+      User Name: <%= text_field_tag :name %>
+    </fieldset>
+
+    <fieldset class="form-group">
+      Password: <%= password_field_tag :password %>
+    </fieldset>
+    <%= submit_tag "Submit" %>
+
+  <% end %>
+</div>

@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   get '/contact' => 'pages#contact', as: :contact
   get '/registry' => 'pages#registry', as: :registry
 
+  get '/admin' => 'reservations#index', as: :reservations
   resources :reservations, only: [:new, :create, :edit, :update]
+  resources :sessions, only: [:new, :create, :destroy]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

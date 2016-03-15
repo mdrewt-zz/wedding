@@ -30,6 +30,7 @@ class ReservationsController < ApplicationController
 
   def update
     @reservation = Reservation.find(params[:id])
+
     if @reservation.update(reservation_params)
       flash[:notice] = 'You have successfully updated your RSVP.'
       redirect_to root_path
@@ -46,12 +47,14 @@ class ReservationsController < ApplicationController
   private
   
   def map_guest_attributes
-    params[:reservation][:guests_attributes].each_key { |key|
-      new_value = params[:reservation][:guests_attributes][key]
-      new_value = JSON.parse(new_value) if new_value.class == String
-      new_value['_destroy'] = JSON.parse(new_value['attributes'])['_destroy'] if new_value['attributes']
-      params[:reservation][:guests_attributes][key] = new_value
-    }
+    if params[:reservation] && params[:reservation][:guests_attributes]
+      params[:reservation][:guests_attributes].each_key { |key|
+        new_value = params[:reservation][:guests_attributes][key]
+        new_value = JSON.parse(new_value) if new_value.class == String
+        new_value['_destroy'] = JSON.parse(new_value['attributes'])['_destroy'] if new_value['attributes']
+        params[:reservation][:guests_attributes][key] = new_value
+      }
+    end
   end
   
   def generate_edit_key

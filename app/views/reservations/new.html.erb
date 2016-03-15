@@ -18,9 +18,9 @@
         </fieldset>
         <fieldset class="form-group">
           <%= f.label :attending %>
-          <%= f.radio_button :attending, true, checked: true %> I will be attending the wedding
+          <%= f.radio_button :attending, 1, checked: (f.object.attending != 0) %> I will be attending the wedding
           <br />
-          <%= f.radio_button :attending, false %> I will be unable to attend the wedding
+          <%= f.radio_button :attending, 0 %> I will be unable to attend the wedding
         </fieldset>
         <fieldset>
           <%= hidden_field_tag :edit_key, f.object.edit_key %>
@@ -77,7 +77,7 @@
           <fieldset class="form-group">
             <%= label_tag :email %>
             <%= text_field_tag :email %>
-            (Optional)
+            <em>(Optional)</em>
           </fieldset>
         </form>
       </div>

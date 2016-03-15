@@ -44,3 +44,7 @@ bower.json
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+#c9 things
+.c9/**/*
+bin/*

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/contact' => 'pages#contact', as: :contact
   get '/registry' => 'pages#registry', as: :registry
 
-  get '/admin' => 'reservations#index', as: :reservations
+  get '/admin' => 'reservations#index'
   resources :reservations, only: [:new, :create, :edit, :update]
   resources :sessions, only: [:new, :create, :destroy]
 

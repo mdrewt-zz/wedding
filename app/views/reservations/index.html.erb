@@ -1,0 +1,26 @@
+<div class="container">
+  <hr class="featurette-divider">
+
+  <table id="reservations" class="tablesorter">
+    <thead>
+      <tr>
+          <th>Last Name</th>
+          <th>First Name</th>
+          <th>Email</th>
+          <th>Attending</th>
+          <th>Guests</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @reservations.each do |rsvp| %>
+        <tr>
+            <td><%= rsvp.last_name %></td>
+            <td><%= rsvp.first_name %></td>
+            <td><%= rsvp.email %></td>
+            <td><%= rsvp.attending == 1 ? 'Attending' : 'Not Attending'%></td>
+            <td><%= rsvp.guests.count %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

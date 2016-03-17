@@ -5,6 +5,7 @@ class ReservationsController < ApplicationController
   before_filter :authorize, only: [:index]
 
   def index
+    @reservations = Reservation.all
   end
 
   def new

@@ -16,16 +16,16 @@ form {
   margin: 0 auto;
   text-align: center;
 }
-table {
+#guest-list {
   display: inline-block;
   margin: 0 auto;
   text-align: center;
 }
-tbody {
+#guest-list tbody {
   display: inline-block;
   margin: 0 auto;
 }
-td {
+#guest-list td {
   text-align: left;
 }
 .remove-guest {
@@ -34,5 +34,22 @@ td {
   color: #C00;
 }
 .remove-guest:hover {
+  cursor: pointer;
+}
+
+#reservations {
+  margin: 0 auto;
+  border: 1px solid grey;
+  width: 100%;
+}
+
+#reservations td {
+  margin: 0 auto;
+  padding: 5px;
+}
+#reservations th {
+  margin: 0 auto;
+  padding: 5px;
+  background-color: grey;
   cursor: pointer;
 }
